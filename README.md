@@ -1,7 +1,7 @@
 
 <div align="justify">
 
-<h1>Criando boas variáveis em Séries Temporais</h1> <h2>Previsão de Consumo (Dataset us_change)</h2>
+<h1>A criação de boas variáveis em Séries Temporais</h1> <h2>Previsão de Consumo (Dataset us_change)</h2>
 
 <p align="justify"><h3>1. Visão Geral</h3></p>
 
@@ -17,31 +17,42 @@
 
 <p align="justify"><b>Lags (Memória Temporal):</b> Capturam a dependência temporal direta através do deslocamento da variável alvo.</p>
 
+```
 Python
 
 for lag in range(1, 13):
     data[f'Consumption_lag{lag}'] = data['Consumption'].shift(lag)
+```
+
 <p align="justify"><b>Diferenças (Dinâmica):</b> Modelam as variações entre períodos em vez dos níveis absolutos, auxiliando na captura da velocidade de mudança.</p>
 
+```
 Python
 
 data['diff_1'] = data['Consumption'].diff(1).shift(1)
+```
 <p align="justify"><b>Estatísticas Móveis:</b> Capturam a tendência local e a volatilidade recente por meio de janelas deslizantes.</p>
 
+```
 Python
 
 data['rolling_mean_4'] = data['Consumption'].shift(1).rolling(window=4).mean()
+```
 <p align="justify"><b>Tendência Global:</b> Um indexador numérico que auxilia o modelo a capturar o crescimento estrutural ao longo do tempo.</p>
 
+```
 Python
 
 data['trend'] = np.arange(len(data))
+```
 <p align="justify"><b>Sazonalidade Cíclica:</b> Representação contínua dos trimestres para garantir que a transição entre ciclos seja suave para o modelo.</p>
 
+```
 Python
 
 data['sin_q'] = np.sin(2 * np.pi * data.index.quarter / 4)
 data['cos_q'] = np.cos(2 * np.pi * data.index.quarter / 4)
+```
 <p align="justify"><i>Nota: Todas as features utilizam o método <b>.shift(1)</b> para evitar <b>Data Leakage</b>, garantindo que apenas informações passadas sejam usadas para prever o futuro.</i></p>
 
 <p align="justify"><h3>4. Resultados Comparativos</h3></p>
