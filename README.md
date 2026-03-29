@@ -1,0 +1,1 @@
+# Criando_variaveis_em_series_temp
