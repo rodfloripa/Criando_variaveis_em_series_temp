@@ -57,11 +57,11 @@ data['cos_q'] = np.cos(2 * np.pi * data.index.quarter / 4)
 
 <p align="justify"><h3>4. Resultados Comparativos</h3></p>
 
-<table align="center"> <thead> <tr> <th>Modelo</th> <th>MSE (Mean Squared Error)</th> </tr> </thead> <tbody> <tr><td><b>Stacking</b></td><td><b>0.06</b></td></tr> <tr><td>Linear Regression</td><td>0.07</td></tr> <tr><td>Ridge Regression</td><td>0.07</td></tr> <tr><td>XGBoost</td><td>0.08</td></tr> <tr><td>Random Forest</td><td>0.11</td></tr> <tr><td>ARIMA</td><td>0.25</td></tr> <tr><td>Chronos (Foundation Model)</td><td>0.43</td></tr> </tbody> </table>
+<table align="center"> <thead> <tr> <th>Modelo</th> <th>MSE (Mean Squared Error)</th> </tr> </thead> <tbody> <tr><td><b>Combinação(Regressao+Xgboost+RandomForest)</b></td><td><b>0.06</b></td></tr> <tr><td>Reg Linear</td><td>0.07</td></tr> <tr><td>Reg. Ridge</td><td>0.07</td></tr> <tr><td>XGBoost</td><td>0.08</td></tr> <tr><td>Random Forest</td><td>0.11</td></tr> <tr><td>ARIMA</td><td>0.25</td></tr> <tr><td>Chronos </td><td>0.43</td></tr> </tbody> </table>
 
 <p align="justify"><h3>5. Conclusões</h3></p>
 
-<p align="justify">A principal conclusão deste estudo é que a <b>simplicidade superou a complexidade</b>. Modelos lineares bem fundamentados em engenharia de features foram superiores a modelos de deep learning ou boosting puro. O ganho obtido com o <b>Stacking</b> foi real, confirmando que a combinação de estimadores pode estabilizar as previsões e reduzir o erro em séries curtas onde a variância costuma ser alta.</p>
+<p align="justify">A principal conclusão deste estudo é que a <b>simplicidade superou a complexidade</b>. Modelos lineares bem fundamentados em engenharia de features foram superiores a modelos de deep learning ou boosting puro. O ganho obtido com o <b>Combinação(regressao+Xgboost+RandomForest)</b> foi real, confirmando que a combinação de estimadores pode estabilizar as previsões e reduzir o erro em séries curtas onde a variância costuma ser alta.</p>
 
 <p align="center">
 
