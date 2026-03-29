@@ -57,7 +57,7 @@ data['cos_q'] = np.cos(2 * np.pi * data.index.quarter / 4)
 
 <p align="justify"><h3>4. Resultados Comparativos</h3></p>
 
-<table align="center"> <thead> <tr> <th>Modelo</th> <th>MSE (Mean Squared Error)</th> </tr> </thead> <tbody> <tr><td><b>Combinação(Regressao+Xgboost+RandomForest)</b></td><td><b>0.06</b></td></tr> <tr><td>Reg Linear</td><td>0.07</td></tr> <tr><td>Reg. Ridge</td><td>0.07</td></tr> <tr><td>XGBoost</td><td>0.08</td></tr> <tr><td>Random Forest</td><td>0.11</td></tr> <tr><td>ARIMA</td><td>0.25</td></tr> <tr><td>Chronos </td><td>0.43</td></tr> </tbody> </table>
+<table align="center"> <thead> <tr> <th>Modelo</th> <th>MSE (Mean Squared Error)</th> </tr> </thead> <tbody> <tr><td><b>Combinação(Regressao+Xgboost+RandomForest)</b></td><td><b>0.06</b></td></tr> <tr><td>Reg Linear</td><td>0.07</td></tr> <tr><td>Reg. Ridge</td><td>0.07</td></tr> <tr><td>XGBoost</td><td>0.08</td></tr> <tr><td>Random Forest</td><td>0.11</td></tr> <tr><td>ARIMA</td><td>0.25</td></tr> <tr><td>Chronos(Transformers)</td><td>0.43</td></tr> </tbody> </table>
 
 <p align="justify"><h3>5. Conclusões</h3></p>
 
